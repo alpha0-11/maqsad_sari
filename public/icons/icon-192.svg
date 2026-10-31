@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#18233c"/>
+      <stop offset="70%" stop-color="#0a0e1a"/>
+      <stop offset="100%" stop-color="#04060b"/>
+    </radialGradient>
+    <radialGradient id="beadGlow" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#a5f3fc"/>
+      <stop offset="65%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#0e374e"/>
+    </radialGradient>
+    <radialGradient id="centerBead" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="30%" stop-color="#f59e0b"/>
+      <stop offset="75%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="180" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+  <path d="M 120 220 Q 256 340 392 220" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="3" stroke-dasharray="4 6"/>
+  <!-- Beads along curve -->
+  <circle cx="130" cy="225" r="14" fill="url(#beadGlow)"/>
+  <circle cx="165" cy="245" r="15" fill="url(#beadGlow)"/>
+  <circle cx="205" cy="265" r="16" fill="url(#beadGlow)"/>
+  <circle cx="256" cy="275" r="22" fill="url(#centerBead)" filter="url(#glow)"/>
+  <circle cx="307" cy="265" r="16" fill="url(#beadGlow)"/>
+  <circle cx="347" cy="245" r="15" fill="url(#beadGlow)"/>
+  <circle cx="382" cy="225" r="14" fill="url(#beadGlow)"/>
+  <!-- Tassel -->
+  <path d="M 256 297 L 256 335" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="256" cy="338" r="5" fill="#f59e0b"/>
+  <!-- Crescent & Star accent -->
+  <path d="M 235 125 A 36 36 0 1 0 275 165 A 30 30 0 1 1 235 125 Z" fill="#38bdf8" filter="url(#glow)" opacity="0.85"/>
+  <circle cx="278" cy="130" r="4" fill="#ffffff" filter="url(#glow)"/>
+</svg>
